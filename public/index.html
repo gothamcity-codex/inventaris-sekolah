@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventaris Sekolah</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="kepala">
+      <p class="keterangan">PENGELOLAAN BARANG</p>
+      <h1>Inventaris Sekolah</h1>
+      <p>Catat barang sekolah, jumlah, dan tempat penyimpanannya.</p>
+    </header>
+
+    <section class="kotak" aria-labelledby="judul-form">
+      <div class="judul-bagian">
+        <h2 id="judul-form">Tambah Barang</h2>
+        <p>Isi data barang di bawah ini.</p>
+      </div>
+
+      <form id="form-barang">
+        <div class="form-grid">
+          <div class="field">
+            <label for="nama">Nama barang</label>
+            <input id="nama" name="nama" type="text" placeholder="Contoh: Proyektor" maxlength="100" required>
+          </div>
+          <div class="field">
+            <label for="kategori">Kategori</label>
+            <select id="kategori" name="kategori" required>
+              <option value="">Pilih kategori</option>
+              <option value="Elektronik">Elektronik</option>
+              <option value="Perabot">Perabot</option>
+              <option value="ATK">ATK</option>
+              <option value="Lainnya">Lainnya</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="jumlah">Jumlah</label>
+            <input id="jumlah" name="jumlah" type="number" min="0" step="1" placeholder="Contoh: 10" required>
+          </div>
+          <div class="field">
+            <label for="ruangan">Ruangan</label>
+            <input id="ruangan" name="ruangan" type="text" placeholder="Contoh: Ruang Guru" maxlength="100" required>
+          </div>
+          <div class="field">
+            <label for="kondisi">Kondisi</label>
+            <select id="kondisi" name="kondisi" required>
+              <option value="">Pilih kondisi</option>
+              <option value="Baik">Baik</option>
+              <option value="Rusak Ringan">Rusak Ringan</option>
+              <option value="Rusak">Rusak</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="aksi-form">
+          <button id="simpan" type="submit" class="btn-utama">Simpan Barang</button>
+          <button id="batal" type="button" class="btn-biasa" hidden>Batal Edit</button>
+        </div>
+        <p id="pesan" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="kotak" aria-labelledby="judul-daftar">
+      <div class="baris-judul">
+        <div class="judul-bagian">
+          <h2 id="judul-daftar">Daftar Barang</h2>
+          <p>Data barang yang tercatat.</p>
+        </div>
+        <span id="jumlah-data" class="jumlah-data">Memuat...</span>
+      </div>
+
+      <div class="tabel-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Nama barang</th>
+              <th>Kategori</th>
+              <th>Jumlah</th>
+              <th>Ruangan</th>
+              <th>Kondisi</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="data-barang"></tbody>
+        </table>
+      </div>
+    </section>
+    <footer>Praktikum Pemrograman Web</footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "inventaris-sekolah-tugas-2",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lanjutan inventaris sekolah dengan Prisma dan Neon PostgreSQL",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate deploy",
+    "db:studio": "prisma studio",
+    "db:seed": "node prisma/seed.js"
+  },
+  "dependencies": {
+    "@prisma/client": "6.19.0",
+    "dotenv": "16.6.1",
+    "express": "5.3.0"
+  },
+  "devDependencies": {
+    "prisma": "6.19.0"
+  }
+}
